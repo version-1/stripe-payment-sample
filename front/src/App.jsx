@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowseRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/index";
 import Checkout from "./pages/prebuilds/index";
 import Custom from "./pages/customs/index";
@@ -14,11 +14,11 @@ function App() {
           <Route path="/prebuilds">
             <Checkout />
           </Route>
-          <Route path="/customs">
-            <Custom />
-          </Route>
           <Route path="/customs/subscription">
             <CustomSubscription />
+          </Route>
+          <Route path="/customs">
+            <Custom />
           </Route>
           <Route path="/">
             <Home />

@@ -1,13 +1,12 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import Nav from "../components/Nav";
 
-export const Home = () => {
-  return <div>
-    <ul>
-      <li><Link to="/" >Home</Link></li>
-      <li><Link to="/prebuilds" >Prebuild</Link></li>
-      <li><Link to="/customs" >Custom</Link></li>
-      <li><Link to="/customs/subscripiton" >Custom Subscription</Link></li>
-    </ul>
-  </div>
-}
+const Home = () => {
+  return (
+    <div>
+      <Nav />
+    </div>
+  );
+};
+
+export default Home;

@@ -14,6 +14,20 @@ app.use(cors())
 app.use(express.static('.'));
 const YOUR_DOMAIN = 'http://localhost:4242';
 
+app.get('/secret', async (req, res) => {
+  const intent = await stripe.paymentIntents.create({
+    amount: 1099,
+    currency: 'usd',
+    // Verify your integration in this guide by including this parameter
+    metadata: {integration_check: 'accept_a_payment'},
+  });
+
+  console.log('intent', intent)
+
+  res.json({clientSecret: intent.client_secret});
+});
+
+
 app.post('/create-checkout-session', cors(), async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'],
